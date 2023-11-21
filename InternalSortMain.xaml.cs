@@ -27,28 +27,73 @@ namespace AlgorithmLab4
 
         private void BubbleSort_Click(object sender, RoutedEventArgs e)
         {
-            //реализуется
-            int depth;
-            if (int.TryParse(depthTextBox.Text, out depth))
+            if(Checker() == true)
             {
-                Console.WriteLine("Aboba");
+                MessageBox.Show("Выполняется");//запуск
+                frame.Navigate(new InternalSortMain());
             }
-            else
+            else 
             {
-                MessageBox.Show("Пожалуйста, введите корректное значение задержки.\nВведенно неверное значение задержки или вовсе отсутствует.");
+                MessageBox.Show("Пример: \n1) 1 или 87\n2) 3 или 0,3");
             }
         }
         private void SelectSort_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Aboba");
+            if (Checker() == true)
+            {
+                MessageBox.Show("Выполняется");//запуск
+            }
+            else
+            {
+                MessageBox.Show("Пример: \n1) 10 или 23\n2) 4 или 0,4");
+            }
         }
         private void QuickSort_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Aboba");
+            if (Checker() == true)
+            {
+                MessageBox.Show("Выполняется");//запуск
+            }
+            else
+            {
+                MessageBox.Show("Пример: \n1) 6 или 107\n2) 5 или 0,5");
+            }
         }
         private void IntroSort_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Aboba");
+            if (Checker() == true)
+            {
+                MessageBox.Show("Выполняется");//запуск
+            }
+            else
+            {
+                MessageBox.Show("Пример: \n1) 5 или 287\n2) 3 или 1,3");
+            }
+        }
+
+        private bool Checker()
+        {
+            int size;
+            double delay;
+            if (int.TryParse(countTextBox.Text, out size) && double.TryParse(delayTextBox.Text, out delay))
+            {
+                if (size >= 0 && delay >= 0)
+                {
+                    return true; 
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, введите целое не отрицательное число элементов.\n" +
+                        "Пожалуйста, введите дробное(через запятую) или целое, не отрицательное время задержки.");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите корректное значение кол-ва элементов или задержки.\n" +
+                    "Введенно неверное значение кол-ва элементов или задержки или вовсе отсутствует.");
+                return false;
+            }
         }
     }
 }
