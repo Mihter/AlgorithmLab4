@@ -58,7 +58,12 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock Grid.Row="4" Grid.Column="1" Text="Введите число(кол-во) сортируемых данных:" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" />
-        <TextBox Grid.Row="4" Grid.Column="1"  x:Name="depthTextBox" FontSize="12" HorizontalAlignment="Right" Height="15" Width="70"/>
+        <StackPanel Grid.Row="4" Grid.Column="1">
+        <TextBlock  Text="Введите число(кол-во) сортируемых данных:" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBox  x:Name="countTextBox" FontSize="12" HorizontalAlignment="Right" Height="15" Width="70" VerticalAlignment="Top"/>
+        <TextBlock  Text="Введите задежку(в секундах):" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <TextBox   x:Name="delayTextBox" FontSize="12" HorizontalAlignment="Right" Height="15" Width="70" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <Frame x:Name="frame" Grid.Row="5" Grid.RowSpan="5" Grid.ColumnSpan="5"/>
     </Grid>
 </Page>
