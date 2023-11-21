@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,21 @@ namespace AlgorithmLab4
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ClickInternalSort(object sender, RoutedEventArgs e)
+        {
+            frameTop.Navigate(new InternalSortMain());
+        }
+
+        private void ClickExternalSort(object sender, RoutedEventArgs e)
+        {
+            frameTop.Navigate(new ExternalSortMain());
+        }
+
+        private void ClickTextSort(object sender, RoutedEventArgs e)
+        {
+            frameTop.Navigate(new TextSortMain());
         }
     }
 }
